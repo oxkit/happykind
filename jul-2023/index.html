@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jul 2023 - Happy Kind</title>
+<meta name="description" content="Jul 2023">
+<link rel="icon" type="image/png" href="../assets/Happy-Kind-200x200-1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF6EC; --cream2:#FFEFE0; --paper:#FFFFFF;
+  --ink:#33251C; --muted:#8A7364; --faint:#B9A18F;
+  --brand:#EF4522; --brand-dark:#C93315; --peach:#FFDFCB; --peach2:#FFD3B6;
+  --line:#F3E0CE; --good:#2E9E63;
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);
+  font-family:Nunito,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{color:var(--brand);text-decoration:none}
+a:hover{color:var(--brand-dark)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.kicker{font-weight:900;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brand)}
+h1,h2,h3{line-height:1.2;font-weight:900}
+h1{font-size:clamp(34px,5.4vw,58px);letter-spacing:-.01em}
+h2{font-size:clamp(26px,3.6vw,38px);margin:10px 0 18px}
+h3{font-size:20px;margin:0 0 8px}
+p{margin:0 0 16px}
+.muted{color:var(--muted)}
+section{padding:72px 0}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,246,236,.88);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:26px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;
+  color:var(--ink);letter-spacing:-.02em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand:hover{color:var(--brand)}
+.nav .spacer{flex:1}
+.nav a.nl{color:var(--ink);font-weight:800;font-size:14.5px}
+.nav a.nl:hover{color:var(--brand)}
+.nav a.cta{background:var(--brand);color:#fff;padding:9px 18px;border-radius:999px;
+  font-weight:900;font-size:14px;box-shadow:0 6px 16px rgba(239,69,34,.28)}
+.nav a.cta:hover{background:var(--brand-dark);color:#fff}
+.burger{display:none;background:none;border:0;font-size:24px;color:var(--ink);cursor:pointer}
+@media(max-width:760px){
+  .nav a.nl{display:none}
+  .burger{display:block}
+  .nav.open{flex-wrap:wrap;height:auto;padding:12px 0}
+  .nav.open a.nl{display:block;width:100%;order:3;padding:8px 0}
+}
+
+/* hero */
+.hero{padding:84px 0 64px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .logo-ghost{width:100%;max-width:420px;filter:drop-shadow(0 24px 40px rgba(239,69,34,.18))}
+.hero .tag{font-size:19px;color:var(--muted);max-width:520px;margin:14px 0 28px}
+.btnrow{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--brand);color:#fff;font-weight:900;
+  padding:14px 26px;border-radius:999px;box-shadow:0 10px 24px rgba(239,69,34,.30)}
+.btn:hover{background:var(--brand-dark);color:#fff;transform:translateY(-1px)}
+.btn.ghost{background:var(--paper);color:var(--brand);border:2px solid var(--peach2);box-shadow:none}
+.btn.ghost:hover{border-color:var(--brand)}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero .logo-ghost{max-width:280px;margin:0 auto}}
+
+/* generic cards */
+.cards{display:grid;gap:20px}
+.cards.c3{grid-template-columns:repeat(3,1fr)}
+.cards.c2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:820px){.cards.c3,.cards.c2{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;box-shadow:0 8px 26px rgba(51,37,28,.05)}
+.card h3 .num{display:inline-flex;width:34px;height:34px;border-radius:11px;background:var(--peach);
+  color:var(--brand-dark);align-items:center;justify-content:center;font-size:16px;margin-right:10px;
+  vertical-align:2px}
+
+/* split section */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+
+/* token strip */
+.tokenband{background:linear-gradient(120deg,#3A2418,#5A2C17 55%,#7A3416);color:#FBE9DC;
+  border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.tokenband h2{color:#fff}
+.tokenband .tk{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  padding:5px 14px;border-radius:999px;font-weight:900;font-size:13px;letter-spacing:.08em;margin-bottom:14px}
+.tokenband a{color:#FFB894}.tokenband a:hover{color:#FFD3B6}
+.tokenband img{max-width:190px;border-radius:18px;box-shadow:0 16px 36px rgba(0,0,0,.35)}
+@media(max-width:820px){.tokenband{grid-template-columns:1fr;padding:32px}}
+
+/* lists / timeline */
+.tl{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.tl a.row{display:flex;gap:16px;align-items:baseline;padding:15px 24px;border-top:1px solid var(--line);
+  color:var(--ink)}
+.tl a.row:first-child{border-top:0}
+.tl a.row:hover{background:var(--cream2)}
+.tl .mo{font-weight:900;min-width:110px}
+.tl .amt{color:var(--muted);font-size:15px;flex:1}
+.tl .usd{font-weight:800;color:var(--brand);white-space:nowrap}
+.badge{display:inline-block;background:var(--peach);color:var(--brand-dark);font-weight:900;
+  font-size:11.5px;letter-spacing:.12em;padding:4px 12px;border-radius:999px;text-transform:uppercase}
+
+/* post body */
+.postbody{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(26px,4vw,52px)}
+.postbody img{border-radius:14px;margin:10px auto;display:block}
+.postbody hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+.postbody blockquote{border-left:4px solid var(--peach2);padding:6px 0 6px 18px;color:var(--muted);margin:0 0 16px}
+.postbody ul,.postbody ol{margin:0 0 16px 22px}
+.postbody h2{font-size:26px;margin:30px 0 12px}
+.postbody h3{font-size:20px;margin:26px 0 10px}
+.post-meta{color:var(--muted);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+
+/* faq */
+details.faq{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin-bottom:14px;overflow:hidden}
+details.faq summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:900;font-size:17.5px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";float:right;color:var(--brand);font-size:22px;font-weight:900}
+details.faq[open] summary::after{content:"\2013"}
+details.faq .fa-body{padding:0 24px 22px}
+details.faq .fa-body p:last-child{margin-bottom:0}
+code.chain{background:var(--cream2);border:1px solid var(--line);border-radius:8px;
+  padding:2px 8px;font-size:13.5px;word-break:break-all}
+
+/* shops + footer */
+.shops{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.shops{grid-template-columns:1fr}}
+.shopcol{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.shopcol h3{display:flex;align-items:center;gap:10px}
+.shopcol img{width:22px;height:auto;border-radius:4px}
+.shopcol a{display:block;padding:9px 0;border-top:1px solid var(--line);color:var(--ink);font-weight:700}
+.shopcol a:hover{color:var(--brand)}
+footer{background:#2B1D14;color:#D9C4B2;margin-top:40px}
+footer .wrap{padding:56px 24px 34px}
+footer .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
+@media(max-width:760px){footer .fgrid{grid-template-columns:1fr}}
+footer h4{color:#fff;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+footer a{color:#EBCDB8;display:block;padding:4px 0}
+footer a:hover{color:#fff}
+footer .socials{display:flex;gap:12px;margin-top:16px}
+footer .socials a{display:inline-flex;width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.08);
+  align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#F3D9C6}
+footer .socials a:hover{background:var(--brand);color:#fff}
+footer .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;
+  font-size:13.5px;color:#A98D77;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* misc */
+.center{text-align:center}
+.mt40{margin-top:40px}
+.note{font-size:14px;color:var(--muted)}
+.ctaband{background:var(--peach);border-radius:28px;padding:48px;text-align:center}
+.ctaband h2{margin-top:0}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav class="nav" id="nav">
+<a class="brand" href="../index.html"><img src="../assets/Happy-Kind-200x200-1.png" alt="Happy Kind logo">happykind</a>
+<span class="spacer"></span>
+<a class="nl" href="../hype/">$HYPE</a>
+<a class="nl" href="../kind-token/">$KIND</a>
+<a class="nl" href="../index.html#giving">Giving</a>
+<a class="nl" style="color:var(--brand)" href="../index.html#updates">Updates</a>
+<a class="cta" href="../index.html#shops">Shop</a>
+<button class="burger" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</nav></div></header>
+
+<section style="padding:56px 0 8px"><div class="wrap" style="max-width:820px">
+  <span class="badge">IN</span>
+  <h1 style="font-size:clamp(30px,4.6vw,46px);margin:14px 0 8px">Jul 2023</h1>
+  <p class="post-meta">Published 2023-08-13</p>
+</div></section>
+<section style="padding-top:26px"><div class="wrap" style="max-width:820px">
+  <div class="postbody"><p>We contributed S$189 (<a href="https://polygonscan.com/tx/0x1dcb416e50d47b57c3decc274ca7a972a3941a92bc51c5621b43b81b652d7ed6" target="_blank" rel="noopener">140 USDT</a>). </p></div>
+  <p class="mt40"><a href="../index.html#updates">&larr; Back to all updates</a></p>
+</div></section>
+<footer><div class="wrap"><div class="fgrid">
+<div>
+  <a class="brand" style="color:#fff" href="../index.html"><img src="../assets/Happy-Kind-200x200-1.png" alt="" style="width:30px;height:30px;border-radius:8px;vertical-align:-6px"> happykind</a>
+  <p style="margin-top:12px;font-size:15px">Sell to make a living. Give to make a difference.<br>1% of every sale goes to our transparent, on-chain donation pool.</p>
+  <div class="socials">
+    <a href="https://x.com/happykindgiving" aria-label="X">X</a>
+    <a href="https://www.instagram.com/hihappykind/" aria-label="Instagram">IG</a>
+    <a href="https://www.facebook.com/hihappykind" aria-label="Facebook">FB</a>
+    <a href="https://t.me/happykind" aria-label="Telegram">TG</a>
+    <a href="https://linkedin.com/company/happykindgiving" aria-label="LinkedIn">IN</a>
+    <a href="https://wa.me/6587812581" aria-label="WhatsApp">WA</a>
+  </div>
+</div>
+<div>
+  <h4>Explore</h4>
+  <a href="../hype/">$HYPE Rewards</a>
+  <a href="../kind-token/">$KIND Token (legacy)</a>
+  <a href="../index.html#giving">Donation Pool</a>
+  <a href="https://debank.com/profile/0xf9F0D9876E321EDad2aF948d86c9d461eD366E4B/">Wallet Transparency</a>
+</div>
+<div>
+  <h4>Get in touch</h4>
+  <a href="mailto:we@happykind.co">we@happykind.co</a>
+  <a href="https://happykindkiddo.com">Happy Kind Kiddo</a>
+  <a href="https://kita.co">KITA Sleep Studio</a>
+</div>
+</div>
+<div class="copy"><span>&copy; 2019 Happy Kind &nbsp;|&nbsp; All Rights Reserved</span><span>happykind.co</span></div>
+</div></footer>
+</body>
+</html>

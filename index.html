@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Kind - Fill the world with kindness</title>
+<meta name="description" content="Happy Kind runs Happy Kind Kiddo and KITA, and gives 1% of every sale to a transparent on-chain donation pool.">
+<link rel="icon" type="image/png" href="assets/Happy-Kind-200x200-1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF6EC; --cream2:#FFEFE0; --paper:#FFFFFF;
+  --ink:#33251C; --muted:#8A7364; --faint:#B9A18F;
+  --brand:#EF4522; --brand-dark:#C93315; --peach:#FFDFCB; --peach2:#FFD3B6;
+  --line:#F3E0CE; --good:#2E9E63;
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);
+  font-family:Nunito,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{color:var(--brand);text-decoration:none}
+a:hover{color:var(--brand-dark)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.kicker{font-weight:900;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brand)}
+h1,h2,h3{line-height:1.2;font-weight:900}
+h1{font-size:clamp(34px,5.4vw,58px);letter-spacing:-.01em}
+h2{font-size:clamp(26px,3.6vw,38px);margin:10px 0 18px}
+h3{font-size:20px;margin:0 0 8px}
+p{margin:0 0 16px}
+.muted{color:var(--muted)}
+section{padding:72px 0}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,246,236,.88);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:26px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;
+  color:var(--ink);letter-spacing:-.02em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand:hover{color:var(--brand)}
+.nav .spacer{flex:1}
+.nav a.nl{color:var(--ink);font-weight:800;font-size:14.5px}
+.nav a.nl:hover{color:var(--brand)}
+.nav a.cta{background:var(--brand);color:#fff;padding:9px 18px;border-radius:999px;
+  font-weight:900;font-size:14px;box-shadow:0 6px 16px rgba(239,69,34,.28)}
+.nav a.cta:hover{background:var(--brand-dark);color:#fff}
+.burger{display:none;background:none;border:0;font-size:24px;color:var(--ink);cursor:pointer}
+@media(max-width:760px){
+  .nav a.nl{display:none}
+  .burger{display:block}
+  .nav.open{flex-wrap:wrap;height:auto;padding:12px 0}
+  .nav.open a.nl{display:block;width:100%;order:3;padding:8px 0}
+}
+
+/* hero */
+.hero{padding:84px 0 64px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .logo-ghost{width:100%;max-width:420px;filter:drop-shadow(0 24px 40px rgba(239,69,34,.18))}
+.hero .tag{font-size:19px;color:var(--muted);max-width:520px;margin:14px 0 28px}
+.btnrow{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--brand);color:#fff;font-weight:900;
+  padding:14px 26px;border-radius:999px;box-shadow:0 10px 24px rgba(239,69,34,.30)}
+.btn:hover{background:var(--brand-dark);color:#fff;transform:translateY(-1px)}
+.btn.ghost{background:var(--paper);color:var(--brand);border:2px solid var(--peach2);box-shadow:none}
+.btn.ghost:hover{border-color:var(--brand)}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero .logo-ghost{max-width:280px;margin:0 auto}}
+
+/* generic cards */
+.cards{display:grid;gap:20px}
+.cards.c3{grid-template-columns:repeat(3,1fr)}
+.cards.c2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:820px){.cards.c3,.cards.c2{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;box-shadow:0 8px 26px rgba(51,37,28,.05)}
+.card h3 .num{display:inline-flex;width:34px;height:34px;border-radius:11px;background:var(--peach);
+  color:var(--brand-dark);align-items:center;justify-content:center;font-size:16px;margin-right:10px;
+  vertical-align:2px}
+
+/* split section */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+
+/* token strip */
+.tokenband{background:linear-gradient(120deg,#3A2418,#5A2C17 55%,#7A3416);color:#FBE9DC;
+  border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.tokenband h2{color:#fff}
+.tokenband .tk{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  padding:5px 14px;border-radius:999px;font-weight:900;font-size:13px;letter-spacing:.08em;margin-bottom:14px}
+.tokenband a{color:#FFB894}.tokenband a:hover{color:#FFD3B6}
+.tokenband img{max-width:190px;border-radius:18px;box-shadow:0 16px 36px rgba(0,0,0,.35)}
+@media(max-width:820px){.tokenband{grid-template-columns:1fr;padding:32px}}
+
+/* lists / timeline */
+.tl{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.tl a.row{display:flex;gap:16px;align-items:baseline;padding:15px 24px;border-top:1px solid var(--line);
+  color:var(--ink)}
+.tl a.row:first-child{border-top:0}
+.tl a.row:hover{background:var(--cream2)}
+.tl .mo{font-weight:900;min-width:110px}
+.tl .amt{color:var(--muted);font-size:15px;flex:1}
+.tl .usd{font-weight:800;color:var(--brand);white-space:nowrap}
+.badge{display:inline-block;background:var(--peach);color:var(--brand-dark);font-weight:900;
+  font-size:11.5px;letter-spacing:.12em;padding:4px 12px;border-radius:999px;text-transform:uppercase}
+
+/* post body */
+.postbody{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(26px,4vw,52px)}
+.postbody img{border-radius:14px;margin:10px auto;display:block}
+.postbody hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+.postbody blockquote{border-left:4px solid var(--peach2);padding:6px 0 6px 18px;color:var(--muted);margin:0 0 16px}
+.postbody ul,.postbody ol{margin:0 0 16px 22px}
+.postbody h2{font-size:26px;margin:30px 0 12px}
+.postbody h3{font-size:20px;margin:26px 0 10px}
+.post-meta{color:var(--muted);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+
+/* faq */
+details.faq{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin-bottom:14px;overflow:hidden}
+details.faq summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:900;font-size:17.5px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";float:right;color:var(--brand);font-size:22px;font-weight:900}
+details.faq[open] summary::after{content:"\2013"}
+details.faq .fa-body{padding:0 24px 22px}
+details.faq .fa-body p:last-child{margin-bottom:0}
+code.chain{background:var(--cream2);border:1px solid var(--line);border-radius:8px;
+  padding:2px 8px;font-size:13.5px;word-break:break-all}
+
+/* shops + footer */
+.shops{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.shops{grid-template-columns:1fr}}
+.shopcol{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.shopcol h3{display:flex;align-items:center;gap:10px}
+.shopcol img{width:22px;height:auto;border-radius:4px}
+.shopcol a{display:block;padding:9px 0;border-top:1px solid var(--line);color:var(--ink);font-weight:700}
+.shopcol a:hover{color:var(--brand)}
+footer{background:#2B1D14;color:#D9C4B2;margin-top:40px}
+footer .wrap{padding:56px 24px 34px}
+footer .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
+@media(max-width:760px){footer .fgrid{grid-template-columns:1fr}}
+footer h4{color:#fff;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+footer a{color:#EBCDB8;display:block;padding:4px 0}
+footer a:hover{color:#fff}
+footer .socials{display:flex;gap:12px;margin-top:16px}
+footer .socials a{display:inline-flex;width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.08);
+  align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#F3D9C6}
+footer .socials a:hover{background:var(--brand);color:#fff}
+footer .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;
+  font-size:13.5px;color:#A98D77;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* misc */
+.center{text-align:center}
+.mt40{margin-top:40px}
+.note{font-size:14px;color:var(--muted)}
+.ctaband{background:var(--peach);border-radius:28px;padding:48px;text-align:center}
+.ctaband h2{margin-top:0}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav class="nav" id="nav">
+<a class="brand" href="index.html"><img src="assets/Happy-Kind-200x200-1.png" alt="Happy Kind logo">happykind</a>
+<span class="spacer"></span>
+<a class="nl" href="hype/">$HYPE</a>
+<a class="nl" href="kind-token/">$KIND</a>
+<a class="nl" href="index.html#giving">Giving</a>
+<a class="nl" href="index.html#updates">Updates</a>
+<a class="cta" href="index.html#shops">Shop</a>
+<button class="burger" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</nav></div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="kicker">Happy Kind Giving</span>
+    <h1 style="margin-top:14px">Fill the world with <span style="color:var(--brand)">kindness</span>.</h1>
+    <p class="tag">We run two little shops and give 1% of every sale to a donation pool anyone can audit on-chain. Sell to make a living. Give to make a difference.</p>
+    <div class="btnrow">
+      <a class="btn" href="https://happykindkiddo.com">Shop Kiddo</a>
+      <a class="btn ghost" href="https://kita.co/">Shop KITA</a>
+      <a class="btn ghost" href="hype/">$HYPE Rewards</a>
+    </div>
+  </div>
+  <div style="text-align:center"><img class="logo-ghost" src="assets/Rectangle-Logo-Happy-Kind.png" alt="Happy Kind ghost mascot"></div>
+</div></section>
+
+<section id="who"><div class="wrap">
+  <span class="kicker">Who we are</span>
+  <h2>Happiness and kindness, hand in hand.</h2>
+  <div class="split">
+    <div>
+      <p>The idea of Happy Kind was conceived when the founder, Joey, bought a painting for her son with a caption saying &ldquo;fill the world with kindness&rdquo;. In this modern world, kindness has taken a backseat to self-interest in fueling happiness.</p>
+      <p>When we started our business venture, we firmly believed that <b>Happiness</b> and <b>Kindness</b> should go hand in hand in making the world a better place.</p>
+      <p>So who are we? We run two businesses &mdash; <a href="https://happykindkiddo.com"><b>Happy Kind Kiddo</b></a> (the baby store) and <a href="https://kita.co"><b>KITA</b></a> (the sleep studio). We sell to make a living. Just that, we make a difference by <b>Doing Good</b>.</p>
+    </div>
+    <div class="card" style="text-align:center">
+      <img src="assets/Rectangle-Logo-Happy-Kind-Kiddo.png" alt="Happy Kind Kiddo logo" style="max-width:230px;border-radius:14px">
+      <p class="note" style="margin-top:14px;margin-bottom:0">Our baby store, Happy Kind Kiddo &mdash; serving Singapore and Malaysia since 2019.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="what" style="background:var(--cream2)"><div class="wrap">
+  <span class="kicker">What we do</span>
+  <h2>Small shop, open books, kind heart.</h2>
+  <div class="cards c3">
+    <div class="card"><h3><span class="num">1</span>Share &amp; learn</h3>
+      <p class="muted">Sharing what we know and learning what we have yet to know. We engage our customers with bite-size content on our social media channels.</p></div>
+    <div class="card"><h3><span class="num">2</span>Give back 1%</h3>
+      <p class="muted">Kindness makes you happy and happiness makes you kind. We give back to the community by contributing 1% of sales towards our donation pool.</p></div>
+    <div class="card"><h3><span class="num">3</span>Radical transparency</h3>
+      <p class="muted">In open and transparency we trust. Contributions are stored in a blockchain <a href="https://debank.com/profile/0xf9F0D9876E321EDad2aF948d86c9d461eD366E4B/"><b>wallet</b></a> that is accessible by everyone.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="tokenband">
+    <div>
+      <span class="tk">NOW REWARDING</span>
+      <h2>Sunset of $KIND, dawn of $HYPE.</h2>
+      <p>Every purchase now earns <b>1% back in $HYPE</b>, deposited straight to your wallet. Another 1% goes to the donation pool &mdash; and if you skip crypto, your full 2% is donated instead.</p>
+      <p style="margin-bottom:0"><a href="hype/"><b>Discover the $HYPE story &rarr;</b></a></p>
+    </div>
+    <div style="text-align:center">
+      <img src="assets/01-happy-kind-hyperliquid-logo.png" alt="Happy Kind x Hyperliquid">
+    </div>
+  </div>
+</div></section>
+
+<section id="updates" style="padding-top:40px"><div class="wrap">
+  <span class="kicker">Update announcements</span>
+  <h2>Notes from the journey.</h2>
+  <div class="cards c3"><div class="card"><span class="badge">Update</span><h3 style="margin-top:14px"><a style="color:var(--ink)" href="moving-forward-to-2025/">Moving Forward to 2025</a></h3><p class="muted" style="font-size:15.5px">Reflecting on 2024: Embracing Challenges and Continuing Our Mission</p><a href="moving-forward-to-2025/" style="font-weight:800">Read more &rarr;</a></div>
+<div class="card"><span class="badge">Update</span><h3 style="margin-top:14px"><a style="color:var(--ink)" href="a-mid-year-reflection-on-2024/">A Mid Year Reflection on 2024</a></h3><p class="muted" style="font-size:15.5px">Reflecting on H1 2024: Our Commitment to Resilience</p><a href="a-mid-year-reflection-on-2024/" style="font-weight:800">Read more &rarr;</a></div>
+<div class="card"><span class="badge">Update</span><h3 style="margin-top:14px"><a style="color:var(--ink)" href="a-reflection-on-2023/">A Reflection on 2023</a></h3><p class="muted" style="font-size:15.5px">Reflecting on 2023: A Journey of Kindness and Innovations</p><a href="a-reflection-on-2023/" style="font-weight:800">Read more &rarr;</a></div></div>
+</div></section>
+
+<section id="giving" style="padding-top:24px"><div class="wrap">
+  <span class="kicker">Contribution history</span>
+  <h2>Every month, on the record.</h2>
+  <p class="muted" style="max-width:640px">1% of monthly sales from Happy Kind Kiddo and KITA, converted to stablecoins and held in our public donation wallet.</p>
+  <div class="split" style="align-items:start;margin-top:26px">
+    <div>
+      <h3 style="margin-bottom:14px">Coming in (IN)</h3>
+      <div class="tl"><a class="row" href="jan-jun-2024/"><span class="mo">Jan-Jun 2024</span><span class="amt">S$535</span></a>
+<a class="row" href="dec-2023/"><span class="mo">Dec 2023</span><span class="amt">S$226</span></a>
+<a class="row" href="nov-2023/"><span class="mo">Nov 2023</span><span class="amt">S$180</span></a>
+<a class="row" href="oct-2023/"><span class="mo">Oct 2023</span><span class="amt">S$209</span></a>
+<a class="row" href="sep-2023/"><span class="mo">Sep 2023</span><span class="amt">S$150 ( 110 USDT )</span></a>
+<a class="row" href="aug-2023/"><span class="mo">Aug 2023</span><span class="amt">S$245 ( 180 USDT )</span></a>
+<a class="row" href="jul-2023/"><span class="mo">Jul 2023</span><span class="amt">S$189 ( 140 USDT )</span></a>
+<a class="row" href="jun-2023/"><span class="mo">Jun 2023</span><span class="amt">S$185 (139 USDT )</span></a>
+<a class="row" href="may-2023/"><span class="mo">May 2023</span><span class="amt">S$198 ( 148 USDT )</span></a>
+<a class="row" href="apr-2023/"><span class="mo">Apr 2023</span><span class="amt">S$454 ( 338 USDT )</span></a>
+<a class="row" href="mar-2023/"><span class="mo">Mar 2023</span><span class="amt">S$380 ( 142 USDC , 0</span></a>
+<a class="row" href="feb-2023/"><span class="mo">Feb 2023</span><span class="amt">S$210 ( 157 USDT )</span></a>
+<a class="row" href="jan-2023/"><span class="mo">Jan 2023</span><span class="amt">S$380 ( 142 USDC , 0</span></a>
+<a class="row" href="dec-2022/"><span class="mo">Dec 2022</span><span class="amt">S$230 ( 85 USDC , 0</span></a></div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:14px">Going out (OUT)</h3>
+      <div class="cards">
+<div class="card">
+  <span class="badge">Donation OUT</span>
+  <h3 style="margin-top:14px"><a style="color:var(--ink)" href="donation-to-community-chest-singapore/">Donation to Community Chest Singapore</a></h3>
+  <a href="donation-to-community-chest-singapore/"><img src="assets/Community-Chest-Singapore-2024.01.26.png" alt="Community Chest Singapore donation receipt" style="border-radius:12px;margin:6px 0 12px"></a>
+  <p class="muted" style="font-size:15.5px">Donated <b>S$670</b> (500 USDT) to the philanthropy and engagement arm of the National Council of Social Service.</p>
+  <a href="donation-to-community-chest-singapore/" style="font-weight:800">Read more &rarr;</a>
+</div>
+<div class="card">
+  <span class="badge">Donation OUT</span>
+  <h3 style="margin-top:14px"><a style="color:var(--ink)" href="donation-to-the-community-chest-malaysia/">Donation to The Community Chest Malaysia</a></h3>
+  <a href="donation-to-the-community-chest-malaysia/"><img src="assets/The-Community-Chest-2024.01.26.png" alt="The Community Chest Malaysia donation receipt" style="border-radius:12px;margin:6px 0 12px"></a>
+  <p class="muted" style="font-size:15.5px">Donated <b>RM2365</b> (500 USDT) to support education in the Malaysian community.</p>
+  <a href="donation-to-the-community-chest-malaysia/" style="font-weight:800">Read more &rarr;</a>
+</div>
+</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="shops" style="background:var(--cream2)"><div class="wrap">
+  <span class="kicker">Shops</span>
+  <h2>Where to find us.</h2>
+  <div class="shops">
+    <div class="shopcol">
+      <h3><img src="assets/singapore_640.png" alt="">Singapore</h3>
+      <div style="margin-top:10px">
+        <a href="https://happykindkiddo.sg">Official Singapore</a>
+        <a href="https://lazada.sg/happy-kind-kiddo">Lazada Singapore</a>
+        <a href="https://shopee.sg/happykindco">Shopee Singapore</a>
+        <a href="https://www.qoo10.sg/shop/happykind">Qoo10 Singapore</a>
+      </div>
+    </div>
+    <div class="shopcol">
+      <h3><img src="assets/malaysia_640.png" alt="">Malaysia</h3>
+      <div style="margin-top:10px">
+        <a href="https://happykindkiddo.my">Official Malaysia</a>
+        <a href="https://lazada.com.my/happy-kind-kiddo">Lazada Malaysia</a>
+        <a href="https://shopee.com.my/hihappykind">Shopee Malaysia</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="ctaband">
+    <span class="kicker">Get in touch</span>
+    <h2>Questions, ideas, or just kindness?</h2>
+    <p class="muted">We would love to hear from you.</p>
+    <a class="btn" href="mailto:we@happykind.co">we@happykind.co</a>
+  </div>
+</div></section>
+<footer><div class="wrap"><div class="fgrid">
+<div>
+  <a class="brand" style="color:#fff" href="index.html"><img src="assets/Happy-Kind-200x200-1.png" alt="" style="width:30px;height:30px;border-radius:8px;vertical-align:-6px"> happykind</a>
+  <p style="margin-top:12px;font-size:15px">Sell to make a living. Give to make a difference.<br>1% of every sale goes to our transparent, on-chain donation pool.</p>
+  <div class="socials">
+    <a href="https://x.com/happykindgiving" aria-label="X">X</a>
+    <a href="https://www.instagram.com/hihappykind/" aria-label="Instagram">IG</a>
+    <a href="https://www.facebook.com/hihappykind" aria-label="Facebook">FB</a>
+    <a href="https://t.me/happykind" aria-label="Telegram">TG</a>
+    <a href="https://linkedin.com/company/happykindgiving" aria-label="LinkedIn">IN</a>
+    <a href="https://wa.me/6587812581" aria-label="WhatsApp">WA</a>
+  </div>
+</div>
+<div>
+  <h4>Explore</h4>
+  <a href="hype/">$HYPE Rewards</a>
+  <a href="kind-token/">$KIND Token (legacy)</a>
+  <a href="index.html#giving">Donation Pool</a>
+  <a href="https://debank.com/profile/0xf9F0D9876E321EDad2aF948d86c9d461eD366E4B/">Wallet Transparency</a>
+</div>
+<div>
+  <h4>Get in touch</h4>
+  <a href="mailto:we@happykind.co">we@happykind.co</a>
+  <a href="https://happykindkiddo.com">Happy Kind Kiddo</a>
+  <a href="https://kita.co">KITA Sleep Studio</a>
+</div>
+</div>
+<div class="copy"><span>&copy; 2019 Happy Kind &nbsp;|&nbsp; All Rights Reserved</span><span>happykind.co</span></div>
+</div></footer>
+</body>
+</html>
