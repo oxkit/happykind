@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Happy Kind - Fill the world with kindness</title>
-<meta name="description" content="Happy Kind runs Happy Kind Kiddo and KITA, and gives 1% of every sale to a transparent on-chain donation pool.">
+<meta name="description" content="1% of every Happy Kind Kiddo sale goes to Happy Kind Giving, held as USDC in the public wallet happykind.eth for anyone to check.">
 <link rel="canonical" href="https://happykind.co/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Happy Kind">
 <meta property="og:title" content="Happy Kind - Fill the world with kindness">
-<meta property="og:description" content="Happy Kind runs Happy Kind Kiddo and KITA, and gives 1% of every sale to a transparent on-chain donation pool.">
+<meta property="og:description" content="1% of every Happy Kind Kiddo sale goes to Happy Kind Giving, held as USDC in the public wallet happykind.eth for anyone to check.">
 <meta property="og:url" content="https://happykind.co/">
 <meta property="og:image" content="https://happykind.co/assets/Rectangle-Logo-Happy-Kind.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Happy Kind - Fill the world with kindness">
-<meta name="twitter:description" content="Happy Kind runs Happy Kind Kiddo and KITA, and gives 1% of every sale to a transparent on-chain donation pool.">
+<meta name="twitter:description" content="1% of every Happy Kind Kiddo sale goes to Happy Kind Giving, held as USDC in the public wallet happykind.eth for anyone to check.">
 <meta name="twitter:image" content="https://happykind.co/assets/Rectangle-Logo-Happy-Kind.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Happy Kind", "url": "https://happykind.co", "logo": "https://happykind.co/assets/Rectangle-Logo-Happy-Kind.png", "description": "Happy Kind runs Happy Kind Kiddo and KITA, and gives 1% of every sale to a transparent on-chain donation pool.", "email": "we@happykind.co", "sameAs": ["https://x.com/happykindgiving", "https://www.instagram.com/hihappykind/", "https://www.facebook.com/hihappykind", "https://t.me/happykind", "https://linkedin.com/company/happykindgiving", "https://happykindkiddo.com", "https://kita.co"]}</script><link rel="icon" type="image/png" href="assets/Happy-Kind-200x200-1.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Happy Kind", "url": "https://happykind.co", "logo": "https://happykind.co/assets/Rectangle-Logo-Happy-Kind.png", "description": "1% of every Happy Kind Kiddo sale goes to Happy Kind Giving, held as USDC in the public wallet happykind.eth for anyone to check.", "email": "we@happykind.co", "sameAs": ["https://www.instagram.com/hihappykind/", "https://www.facebook.com/hihappykind", "https://happykindkiddo.my", "https://happykindkiddo.sg"]}</script><link rel="icon" type="image/png" href="assets/Happy-Kind-200x200-1.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
@@ -96,21 +96,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,246,236,.88);
 .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
 @media(max-width:820px){.split{grid-template-columns:1fr}}
 
-/* token strip */
-.tokenband{background:linear-gradient(120deg,#3A2418,#5A2C17 55%,#7A3416);color:#FBE9DC;
-  border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
-.tokenband h2{color:#fff}
-.tokenband .tk{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
-  padding:5px 14px;border-radius:999px;font-weight:900;font-size:13px;letter-spacing:.08em;margin-bottom:14px}
-.tokenband a{color:#FFB894}.tokenband a:hover{color:#FFD3B6}
-.tokenband img{max-width:190px;border-radius:18px;box-shadow:0 16px 36px rgba(0,0,0,.35)}
-@media(max-width:820px){.tokenband{grid-template-columns:1fr;padding:32px}}
-
 /* lists / timeline */
 .tl{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-.tl a.row{display:flex;gap:16px;align-items:baseline;padding:15px 24px;border-top:1px solid var(--line);
+.tl .row{display:flex;gap:16px;align-items:baseline;padding:15px 24px;border-top:1px solid var(--line);
   color:var(--ink)}
-.tl a.row:first-child{border-top:0}
+.tl .row:first-child{border-top:0}
 .tl a.row:hover{background:var(--cream2)}
 .tl .mo{font-weight:900;min-width:110px}
 .tl .amt{color:var(--muted);font-size:15px;flex:1}
@@ -139,14 +129,7 @@ details.faq .fa-body p:last-child{margin-bottom:0}
 code.chain{background:var(--cream2);border:1px solid var(--line);border-radius:8px;
   padding:2px 8px;font-size:13.5px;word-break:break-all}
 
-/* shops + footer */
-.shops{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:700px){.shops{grid-template-columns:1fr}}
-.shopcol{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-.shopcol h3{display:flex;align-items:center;gap:10px}
-.shopcol img{width:22px;height:auto;border-radius:4px}
-.shopcol a{display:block;padding:9px 0;border-top:1px solid var(--line);color:var(--ink);font-weight:700}
-.shopcol a:hover{color:var(--brand)}
+/* footer */
 footer{background:#2B1D14;color:#D9C4B2;margin-top:40px}
 footer .wrap{padding:56px 24px 34px}
 footer .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
@@ -165,94 +148,55 @@ footer .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-
 .center{text-align:center}
 .mt40{margin-top:40px}
 .note{font-size:14px;color:var(--muted)}
-.ctaband{background:var(--peach);border-radius:28px;padding:48px;text-align:center}
-.ctaband h2{margin-top:0}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav class="nav" id="nav">
 <a class="brand" href="index.html"><img src="assets/Happy-Kind-200x200-1.png" alt="Happy Kind logo">happykind</a>
 <span class="spacer"></span>
-<a class="nl" href="hype/">$HYPE</a>
-<a class="nl" href="kind-token/">$KIND</a>
 <a class="nl" href="index.html#giving">Giving</a>
-<a class="nl" href="index.html#updates">Updates</a>
-<a class="cta" href="index.html#shops">Shop</a>
+<a class="nl" href="index.html#record">Record</a>
+<a class="nl" href="index.html#story">Story</a>
+<a class="cta" href="https://happykindkiddo.my">Shop</a>
 <button class="burger" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
 </nav></div></header>
 
 <section class="hero"><div class="wrap">
   <div>
-    <span class="kicker">Happy Kind Giving</span>
-    <h1 style="margin-top:14px">Fill the world with <span style="color:var(--brand)">kindness</span>.</h1>
-    <p class="tag">We run two little shops and give 1% of every sale to a donation pool anyone can audit on-chain. Sell to make a living. Give to make a difference.</p>
+    <h1>Happy Kind <span style="color:var(--brand)">Giving</span></h1>
+    <p class="tag">1% of every Happy Kind Kiddo sale goes to a donation pool anyone can check.</p>
     <div class="btnrow">
-      <a class="btn" href="https://happykindkiddo.com">Shop Kiddo</a>
-      <a class="btn ghost" href="https://kita.co/">Shop KITA</a>
-      <a class="btn ghost" href="hype/">$HYPE Rewards</a>
+      <a class="btn" href="https://happykindkiddo.my">Shop Happy Kind Kiddo</a>
     </div>
+    <p class="note" style="margin-top:14px">Singapore: <a href="https://happykindkiddo.sg">happykindkiddo.sg</a></p>
   </div>
   <div style="text-align:center"><img class="logo-ghost" src="assets/Rectangle-Logo-Happy-Kind.png" alt="Happy Kind ghost mascot"></div>
 </div></section>
 
-<section id="who"><div class="wrap">
-  <span class="kicker">Who we are</span>
-  <h2>Happiness and kindness, hand in hand.</h2>
-  <div class="split">
-    <div>
-      <p>The idea of Happy Kind was conceived when the founder, Joey, bought a painting for her son with a caption saying &ldquo;fill the world with kindness&rdquo;. In this modern world, kindness has taken a backseat to self-interest in fueling happiness.</p>
-      <p>When we started our business venture, we firmly believed that <b>Happiness</b> and <b>Kindness</b> should go hand in hand in making the world a better place.</p>
-      <p>So who are we? We run two businesses &mdash; <a href="https://happykindkiddo.com"><b>Happy Kind Kiddo</b></a> (the baby store) and <a href="https://kita.co"><b>KITA</b></a> (the sleep studio). We sell to make a living. Just that, we make a difference by <b>Doing Good</b>.</p>
-    </div>
-    <div class="card" style="text-align:center">
-      <img src="assets/Rectangle-Logo-Happy-Kind-Kiddo.png" alt="Happy Kind Kiddo logo" style="max-width:230px;border-radius:14px">
-      <p class="note" style="margin-top:14px;margin-bottom:0">Our baby store, Happy Kind Kiddo &mdash; serving Singapore and Malaysia since 2019.</p>
-    </div>
-  </div>
-</div></section>
-
-<section id="what" style="background:var(--cream2)"><div class="wrap">
-  <span class="kicker">What we do</span>
-  <h2>Small shop, open books, kind heart.</h2>
+<section id="giving" style="background:var(--cream2)"><div class="wrap">
+  <span class="kicker">Happy Kind Giving</span>
+  <h2>How it works</h2>
   <div class="cards c3">
-    <div class="card"><h3><span class="num">1</span>Share &amp; learn</h3>
-      <p class="muted">Sharing what we know and learning what we have yet to know. We engage our customers with bite-size content on our social media channels.</p></div>
-    <div class="card"><h3><span class="num">2</span>Give back 1%</h3>
-      <p class="muted">Kindness makes you happy and happiness makes you kind. We give back to the community by contributing 1% of sales towards our donation pool.</p></div>
-    <div class="card"><h3><span class="num">3</span>Radical transparency</h3>
-      <p class="muted">In open and transparency we trust. Contributions are stored in a blockchain <a href="https://debank.com/profile/0xf9F0D9876E321EDad2aF948d86c9d461eD366E4B/"><b>wallet</b></a> that is accessible by everyone.</p></div>
+    <div class="card"><h3><span class="num">1</span>1% of every sale</h3>
+      <p class="muted">From 26 October 2026, 1% of every sale on <a href="https://happykindkiddo.my">happykindkiddo.my</a> and <a href="https://happykindkiddo.sg">happykindkiddo.sg</a> goes to Happy Kind Giving.</p></div>
+    <div class="card"><h3><span class="num">2</span>Held in happykind.eth</h3>
+      <p class="muted">We hold it as USDC in our public wallet, <b>happykind.eth</b>.</p>
+      <p><a href="https://debank.com/profile/0x881F65808dcAea6a37700c1fE0c79f6f3968DF64"><b>View the wallet &rarr;</b></a></p>
+      <p class="note">No crypto wallet needed: tap the link to see every transaction.</p></div>
+    <div class="card"><h3><span class="num">3</span>Donated on-chain</h3>
+      <p class="muted">Donations are sent on-chain from happykind.eth, so every donation is a public transaction. We post each month and what it funds below.</p></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="tokenband">
-    <div>
-      <span class="tk">NOW REWARDING</span>
-      <h2>Sunset of $KIND, dawn of $HYPE.</h2>
-      <p>Every purchase now earns <b>1% back in $HYPE</b>, deposited straight to your wallet. Another 1% goes to the donation pool &mdash; and if you skip crypto, your full 2% is donated instead.</p>
-      <p style="margin-bottom:0"><a href="hype/"><b>Discover the $HYPE story &rarr;</b></a></p>
-    </div>
-    <div style="text-align:center">
-      <img src="assets/01-happy-kind-hyperliquid-logo.png" alt="Happy Kind x Hyperliquid">
-    </div>
-  </div>
-</div></section>
-
-<section id="updates" style="padding-top:40px"><div class="wrap">
-  <span class="kicker">Update announcements</span>
-  <h2>Notes from the journey.</h2>
-  <div class="cards c3"><div class="card"><span class="badge">Update</span><h3 style="margin-top:14px"><a style="color:var(--ink)" href="moving-forward-to-2025/">Moving Forward to 2025</a></h3><p class="muted" style="font-size:15.5px">Reflecting on 2024: Embracing Challenges and Continuing Our Mission</p><a href="moving-forward-to-2025/" style="font-weight:800">Read more &rarr;</a></div>
-<div class="card"><span class="badge">Update</span><h3 style="margin-top:14px"><a style="color:var(--ink)" href="a-mid-year-reflection-on-2024/">A Mid Year Reflection on 2024</a></h3><p class="muted" style="font-size:15.5px">Reflecting on H1 2024: Our Commitment to Resilience</p><a href="a-mid-year-reflection-on-2024/" style="font-weight:800">Read more &rarr;</a></div>
-<div class="card"><span class="badge">Update</span><h3 style="margin-top:14px"><a style="color:var(--ink)" href="a-reflection-on-2023/">A Reflection on 2023</a></h3><p class="muted" style="font-size:15.5px">Reflecting on 2023: A Journey of Kindness and Innovations</p><a href="a-reflection-on-2023/" style="font-weight:800">Read more &rarr;</a></div></div>
-</div></section>
-
-<section id="giving" style="padding-top:24px"><div class="wrap">
-  <span class="kicker">Contribution history</span>
+<section id="record"><div class="wrap">
+  <span class="kicker">Record</span>
   <h2>Every month, on the record.</h2>
-  <p class="muted" style="max-width:640px">1% of monthly sales from Happy Kind Kiddo and KITA, converted to stablecoins and held in our public donation wallet.</p>
-  <div class="split" style="align-items:start;margin-top:26px">
+  <h3 style="margin:26px 0 14px">From October 2026</h3>
+  <div class="tl"><div class="row"><span class="mo">Oct 2026</span><span class="amt">From 26 Oct: to be posted</span></div></div>
+  <h3 style="margin:44px 0 14px">Earlier history (Dec 2022 to Jun 2024)</h3>
+  <div class="split" style="align-items:start">
     <div>
-      <h3 style="margin-bottom:14px">Coming in (IN)</h3>
+      <span class="kicker" style="display:block;margin-bottom:12px">Coming in (IN)</span>
       <div class="tl"><a class="row" href="jan-jun-2024/"><span class="mo">Jan-Jun 2024</span><span class="amt">S$535</span></a>
 <a class="row" href="dec-2023/"><span class="mo">Dec 2023</span><span class="amt">S$226</span></a>
 <a class="row" href="nov-2023/"><span class="mo">Nov 2023</span><span class="amt">S$180</span></a>
@@ -269,7 +213,7 @@ footer .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-
 <a class="row" href="dec-2022/"><span class="mo">Dec 2022</span><span class="amt">S$230 ( 85 USDC , 0</span></a></div>
     </div>
     <div>
-      <h3 style="margin-bottom:14px">Going out (OUT)</h3>
+      <span class="kicker" style="display:block;margin-bottom:12px">Going out (OUT)</span>
       <div class="cards">
 <div class="card">
   <span class="badge">Donation OUT</span>
@@ -290,63 +234,32 @@ footer .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-
   </div>
 </div></section>
 
-<section id="shops" style="background:var(--cream2)"><div class="wrap">
-  <span class="kicker">Shops</span>
-  <h2>Where to find us.</h2>
-  <div class="shops">
-    <div class="shopcol">
-      <h3><img src="assets/singapore_640.png" alt="">Singapore</h3>
-      <div style="margin-top:10px">
-        <a href="https://happykindkiddo.sg">Official Singapore</a>
-        <a href="https://lazada.sg/happy-kind-kiddo">Lazada Singapore</a>
-        <a href="https://shopee.sg/happykindco">Shopee Singapore</a>
-        <a href="https://www.qoo10.sg/shop/happykind">Qoo10 Singapore</a>
-      </div>
+<section id="story" style="background:var(--cream2)"><div class="wrap">
+  <span class="kicker">Our story</span>
+  <h2>Happiness and kindness, hand in hand.</h2>
+  <div class="split">
+    <div>
+      <p>The idea of Happy Kind was conceived when the founder, Joey, bought a painting for her son with a caption saying &ldquo;fill the world with kindness&rdquo;.</p>
+      <p>We run <a href="https://happykindkiddo.my"><b>Happy Kind Kiddo</b></a>, our baby store serving Malaysia and Singapore since 2019. We sell to make a living and give to make a difference.</p>
     </div>
-    <div class="shopcol">
-      <h3><img src="assets/malaysia_640.png" alt="">Malaysia</h3>
-      <div style="margin-top:10px">
-        <a href="https://happykindkiddo.my">Official Malaysia</a>
-        <a href="https://lazada.com.my/happy-kind-kiddo">Lazada Malaysia</a>
-        <a href="https://shopee.com.my/hihappykind">Shopee Malaysia</a>
-      </div>
+    <div class="card" style="text-align:center">
+      <img src="assets/Rectangle-Logo-Happy-Kind-Kiddo.png" alt="Happy Kind Kiddo logo" style="max-width:230px;border-radius:14px">
     </div>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="ctaband">
-    <span class="kicker">Get in touch</span>
-    <h2>Questions, ideas, or just kindness?</h2>
-    <p class="muted">We would love to hear from you.</p>
-    <a class="btn" href="mailto:we@happykind.co">we@happykind.co</a>
   </div>
 </div></section>
 <footer><div class="wrap"><div class="fgrid">
 <div>
   <a class="brand" style="color:#fff" href="index.html"><img src="assets/Happy-Kind-200x200-1.png" alt="" style="width:30px;height:30px;border-radius:8px;vertical-align:-6px"> happykind</a>
-  <p style="margin-top:12px;font-size:15px">Sell to make a living. Give to make a difference.<br>1% of every sale goes to our transparent, on-chain donation pool.</p>
+  <p style="margin-top:12px;font-size:15px">Sell to make a living. Give to make a difference.</p>
   <div class="socials">
-    <a href="https://x.com/happykindgiving" aria-label="X">X</a>
     <a href="https://www.instagram.com/hihappykind/" aria-label="Instagram">IG</a>
     <a href="https://www.facebook.com/hihappykind" aria-label="Facebook">FB</a>
-    <a href="https://t.me/happykind" aria-label="Telegram">TG</a>
-    <a href="https://linkedin.com/company/happykindgiving" aria-label="LinkedIn">IN</a>
     <a href="https://wa.me/6587812581" aria-label="WhatsApp">WA</a>
   </div>
 </div>
 <div>
-  <h4>Explore</h4>
-  <a href="hype/">$HYPE Rewards</a>
-  <a href="kind-token/">$KIND Token (legacy)</a>
-  <a href="index.html#giving">Donation Pool</a>
-  <a href="https://debank.com/profile/0xf9F0D9876E321EDad2aF948d86c9d461eD366E4B/">Wallet Transparency</a>
-</div>
-<div>
   <h4>Get in touch</h4>
   <a href="mailto:we@happykind.co">we@happykind.co</a>
-  <a href="https://happykindkiddo.com">Happy Kind Kiddo</a>
-  <a href="https://kita.co">KITA Sleep Studio</a>
 </div>
 </div>
 <div class="copy"><span>&copy; 2019 Happy Kind &nbsp;|&nbsp; All Rights Reserved</span><span>happykind.co</span></div>
